@@ -1,0 +1,29 @@
+public class LeetCode1295_FindNumbersWithEvenNumberOfDigits {
+
+    public static int findNumbers(int[] nums) {
+        int count = 0;
+
+        for (int num : nums) {
+            int digits = 0;
+
+            while (num > 0) {
+                digits++;
+                num /= 10;
+            }
+
+            if (digits % 2 == 0) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {12, 345, 2, 6, 7896};
+        System.out.println(findNumbers(nums));
+
+        int[] nums2 = {555, 901, 482, 1771};
+        System.out.println(findNumbers(nums2));
+    }
+}
